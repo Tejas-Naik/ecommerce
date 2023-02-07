@@ -1,9 +1,11 @@
 import { signInWithGoogle } from "../../utils/firebase/firebase.utlils";
+import { db } from "../../utils/firebase/firebase.utlils";
+import { createUserDocumentFromAuth } from "../../utils/firebase/firebase.utlils";
 
 function SignIn() {
     const logUserGoogle = async () => {
-        const response = await signInWithGoogle();
-        console.log(response);
+        const { user } = await signInWithGoogle();
+        createUserDocumentFromAuth(user);
     }
 
     return (
