@@ -5,7 +5,7 @@ import { createUserDocumentFromAuth } from "../../utils/firebase/firebase.utlils
 function SignIn() {
     const logUserGoogle = async () => {
         const { user } = await signInWithGoogle();
-        createUserDocumentFromAuth(user);
+        const userDocRef = await createUserDocumentFromAuth(user);
     }
 
     return (
