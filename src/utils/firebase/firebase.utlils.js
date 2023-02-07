@@ -1,4 +1,10 @@
 import { initializeApp } from 'firebase/app';
+import {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signInWithRedirect
+} from 'firebase/auth';
 
 // App config (registering the app for web on firebase)
 const firebaseConfig = {
@@ -11,3 +17,5 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
+
+const provider = new GoogleAuthProvider();
